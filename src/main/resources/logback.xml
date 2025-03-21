@@ -1,0 +1,14 @@
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <withJansi>${log.jansi.enabled:-true}</withJansi>
+        <encoder>
+            <pattern>
+                %gray(%date{HH:mm:ss.SSS}) %highlight(%5level): %msg | %magenta(logger=%logger{42})
+            </pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>
